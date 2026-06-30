@@ -24,4 +24,6 @@ body {
     sans-serif;
 
   background: #faf8f4;
+
+  overflow: hidden;
 }

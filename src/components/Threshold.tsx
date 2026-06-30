@@ -1,6 +1,10 @@
 import symbol from "../assets/rf-symbol.png";
 
-function Threshold() {
+type ThresholdProps = {
+  onContinue: () => void;
+};
+
+function Threshold({ onContinue }: ThresholdProps) {
   return (
     <main className="threshold">
       <div className="threshold-content">
@@ -27,27 +31,14 @@ function Threshold() {
             you need to do.
           </p>
 
-          <div
+          <button
+            type="button"
             className="threshold-chevron"
-            onClick={() =>
-                document.getElementById("welcome")?.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                })
-            }
-            role="button"
-            tabIndex={0}
-            onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                    document.getElementById("welcome")?.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start",
-                    });
-                }
-            }}
-        >
-         ⌄
-        </div>
+            onClick={onContinue}
+            aria-label="Continue to welcome"
+          >
+            ⌄
+          </button>
         </div>
       </div>
     </main>

@@ -1,14 +1,29 @@
-function Welcome() {
+type WelcomeProps = {
+  onContinue: () => void;
+};
+
+function Welcome({ onContinue }: WelcomeProps) {
   return (
-    <section id="welcome" className="welcome-room">
+    <section className="welcome-room">
       <div className="welcome-room-content">
-        <p className="welcome-kicker">Welcome</p>
+        <h1 className="welcome-title">
+          <span className="welcome-line welcome-line-one">
+            Arrive here...
+          </span>
 
-        <h1>Let yourself settle here.</h1>
+          <span className="welcome-line welcome-line-two">
+            and begin to notice.
+          </span>
+        </h1>
 
-        <p>
-          Just notice where you are.
-        </p>
+        <button
+          type="button"
+          className="welcome-chevron"
+          onClick={onContinue}
+          aria-label="Continue"
+        >
+          ⌄
+        </button>
       </div>
     </section>
   );
