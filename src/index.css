@@ -26,4 +26,5 @@ body {
   background: #faf8f4;
 
   overflow: hidden;
+  overflow-y: auto;
 }
