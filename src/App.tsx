@@ -94,7 +94,17 @@ function App() {
       )}
 
       {room === "practice" && (
-        <Practice onBack={() => setRoom("invitation")} />
+        <Practice
+          onBack={() => setRoom("invitation")}
+          onBegin={() => setRoom("threshold")}
+          onInvitation={() => setRoom("invitation")}
+          onUnderstand={() => setRoom("understand")}
+          onPractice={() => setRoom("practice")}
+          onBaselineSeries={() => setRoom("practice")}
+          onQuickReturns={() => setRoom("practice")}
+          onQuickResets={() => setRoom("practice")}
+          onDeepReturns={() => setRoom("practice")}
+        />
       )}
     </>
   );
