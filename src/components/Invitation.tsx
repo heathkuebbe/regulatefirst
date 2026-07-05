@@ -1,6 +1,6 @@
 import InvitationCard from "./InvitationCard";
-import understandPreview from "../assets/invitation/understand-preview.png";
-import practicePreview from "../assets/invitation/practice-preview.png";
+import understandPreview from "../assets/understand-preview.png";
+import practicePreview from "../assets/practice-preview.png";
 import { useState } from "react";
 import MenuDrawer from "./MenuDrawer";
 
