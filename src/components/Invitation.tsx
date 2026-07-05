@@ -6,11 +6,19 @@ import MenuDrawer from "./MenuDrawer";
 
 type InvitationProps = {
   onReturn: () => void;
+  onBegin: () => void;
+  onInvitation: () => void;
   onUnderstand: () => void;
   onPractice: () => void;
 };
 
-function Invitation({ onReturn, onUnderstand, onPractice }: InvitationProps) {
+function Invitation({
+  onReturn,
+  onBegin,
+  onInvitation,
+  onUnderstand,
+  onPractice,
+}: InvitationProps) {
 
 const [menuOpen, setMenuOpen] = useState(false);
 
@@ -79,13 +87,18 @@ const [menuOpen, setMenuOpen] = useState(false);
         <footer className="invitation-footer">
           <div className="invitation-footer-mark">☰</div>
           <p>You can return anytime</p>
-        </footer>
+        </footer>    
+      </div>
 
         <MenuDrawer
-            isOpen={menuOpen}
-            onClose={() => setMenuOpen(false)}
-            />
-      </div>
+        isOpen={menuOpen}
+        onClose={() => setMenuOpen(false)}
+        onBegin={onBegin}
+        onInvitation={onInvitation}
+        onUnderstand={onUnderstand}
+        onPractice={onPractice}
+        />
+
     </section>
   );
 }

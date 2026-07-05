@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Threshold from "./components/Threshold";
 import Welcome from "./components/Welcome";
 import Realization from "./components/Realization";
@@ -23,8 +23,26 @@ type Room =
   | "understand"
   | "practice";
 
+/*
+  DEVELOPMENT START ROOM
+
+  Use "threshold" for the full experience.
+  Use "invitation" to skip straight to the Invitation room.
+  Use "understand" while building the Book Room.
+*/
+
+const DEV_ROOM: Room = "invitation";
+
 function App() {
-  const [room, setRoom] = useState<Room>("threshold");
+   const [room, setRoom] = useState<Room>(DEV_ROOM);
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant" as ScrollBehavior,
+    });
+  }, [room]);
 
   return (
     <>
@@ -59,22 +77,25 @@ function App() {
       {room === "invitation" && (
         <Invitation
           onReturn={() => setRoom("discovery")}
+          onBegin={() => setRoom("threshold")}
+          onInvitation={() => setRoom("invitation")}
           onUnderstand={() => setRoom("understand")}
           onPractice={() => setRoom("practice")}
-          />
+        />
       )}
+
       {room === "understand" && (
         <Understand
           onBack={() => setRoom("invitation")}
+          onBegin={() => setRoom("threshold")}
+          onUnderstand={() => setRoom("understand")}
+          onPractice={() => setRoom("practice")}
         />
       )}
 
       {room === "practice" && (
-        <Practice
-          onBack={() => setRoom("invitation")}
-        />
+        <Practice onBack={() => setRoom("invitation")} />
       )}
-
     </>
   );
 }

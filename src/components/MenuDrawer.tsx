@@ -1,14 +1,30 @@
 type MenuDrawerProps = {
   isOpen: boolean;
   onClose: () => void;
+  onBegin: () => void;
+  onInvitation: () => void;
+  onUnderstand: () => void;
+  onPractice: () => void;
 };
 
-function MenuDrawer({ isOpen, onClose }: MenuDrawerProps) {
+function MenuDrawer({
+  isOpen,
+  onClose,
+  onBegin,
+  onInvitation,
+  onUnderstand,
+  onPractice,
+}: MenuDrawerProps) {
   if (!isOpen) return null;
 
+  const handleNavigate = (navigate: () => void) => {
+    navigate();
+    onClose();
+  };
+
   return (
-    <div className="menu-drawer-backdrop">
-      <aside className="menu-drawer">
+    <div className="menu-drawer-backdrop" onClick={onClose}>
+      <aside className="menu-drawer" onClick={(e) => e.stopPropagation()}>
         <button
           type="button"
           className="menu-drawer-close"
@@ -18,17 +34,25 @@ function MenuDrawer({ isOpen, onClose }: MenuDrawerProps) {
           ×
         </button>
 
-        <p className="menu-drawer-kicker">Menu</p>
+        <p className="menu-drawer-brand">Regulate First</p>
 
         <nav className="menu-drawer-nav">
-          <button type="button">Begin</button>
-          <button type="button">Understand</button>
-          <button type="button">Practice</button>
-        </nav>
+          <button type="button" onClick={() => handleNavigate(onBegin)}>
+            Begin
+          </button>
 
-        <p className="menu-drawer-note">
-          More paths coming soon.
-        </p>
+          <button type="button" onClick={() => handleNavigate(onInvitation)}>
+            Invitation
+          </button>
+
+          <button type="button" onClick={() => handleNavigate(onUnderstand)}>
+            Understand
+          </button>
+
+          <button type="button" onClick={() => handleNavigate(onPractice)}>
+            Practice
+          </button>
+        </nav>
       </aside>
     </div>
   );

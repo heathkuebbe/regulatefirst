@@ -808,6 +808,829 @@
   z-index: 3;
 }
 
+/* ==========================================
+   Understand
+========================================== */
+
+.understand-room {
+  min-height: 100vh;
+  background: #faf8f4;
+  color: #071f3a;
+  overflow-x: hidden;
+}
+
+/* Navigation */
+
+.understand-return,
+.understand-menu {
+  position: fixed;
+  z-index: 50;
+  background: transparent;
+  border: 0;
+  color: #b97711;
+  cursor: pointer;
+}
+
+.understand-return {
+  top: 1.35rem;
+  left: 1.35rem;
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.understand-menu {
+  top: 1.35rem;
+  right: 1.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.understand-menu span {
+  display: block;
+  width: 1.85rem;
+  height: 2px;
+  border-radius: 999px;
+  background: #b97711;
+}
+
+/* Hero */
+
+.understand-hero {
+  min-height: auto;
+  padding: 4.75rem 7vw 1.5rem;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  grid-template-areas:
+    "copy book"
+    "bottom book";
+  gap: 1.25rem 3rem;
+  align-items: center;
+}
+
+.understand-hero-copy {
+  grid-area: copy;
+  max-width: 34rem;
+}
+
+.understand-hero-copy h1 {
+  margin: 0;
+  color: #072243;
+  font-size: clamp(2.8rem, 4vw, 4.4rem);
+  line-height: 0.94;
+  font-weight: 500;
+  letter-spacing: -0.045em;
+}
+
+.understand-hero-copy h1 em {
+  color: #b97711;
+  font-style: italic;
+}
+
+.understand-rule {
+  width: 3.25rem;
+  height: 2px;
+  margin: 1.5rem 0 1.35rem;
+  background: #b97711;
+}
+
+.understand-subtitle {
+  max-width: 25rem;
+  margin: 0;
+  color: #102b49;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.understand-book-wrap {
+  grid-area: book;
+  width: min(80vw, 21rem);
+  margin: 0.75rem auto 1.5rem;
+}
+
+.understand-book-wrap img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.understand-hero-bottom {
+  grid-area: bottom;
+  max-width: 34rem;
+}
+
+.understand-question {
+  margin: 2.25rem 0 2rem;
+  max-width: 32rem;
+}
+
+.question-mark {
+  display: block;
+  color: #c48722;
+  font-size: 2.2rem;
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+
+.understand-question p {
+  margin: 0;
+  font-size: 1.35rem;
+  line-height: 1.55;
+  color: #072243;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 500;
+}
+
+.understand-question strong {
+  font-weight: 600;
+}
+
+.understand-amazon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 1.6rem;
+  padding: 0.9rem 1.4rem;
+  min-width: 16rem;
+
+  background: transparent;
+  border: 1px solid #b58b3b;
+  border-radius: 0.5rem;
+
+  color: #b58b3b;
+  text-decoration: none;
+
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    background-color 300ms ease,
+    color 300ms ease,
+    border-color 300ms ease,
+    transform 250ms ease;
+}
+
+.understand-amazon-link:hover {
+  background: #b58b3b;
+  color: #ffffff;
+  transform: translateX(3px);
+}
+
+/* Quote Banner */
+
+.understand-quote {
+  position: relative;
+  margin: 0 auto 4rem;
+  width: min(1200px, 92%);
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.understand-quote-bg {
+  display: block;
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  object-position: left center;
+}
+
+.understand-quote-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 2.5rem 3rem;
+  background: linear-gradient(
+    90deg,
+    rgba(7, 20, 40, 0) 40%,
+    rgba(7, 20, 40, 0.82) 60%,
+    rgba(7, 20, 40, 0.92) 100%
+  );
+}
+
+.understand-quote-content {
+  max-width: 520px;
+  color: white;
+}
+
+.understand-quote-mark {
+  font-size: 4.5rem;
+  color: #c48722;
+  line-height: 0.7;
+  margin-bottom: -1.2rem;
+}
+
+.understand-quote-content h2 {
+  margin: 0.25rem 0 1rem;
+  font-size: clamp(1.25rem, 2.2vw, 2.1rem);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.understand-quote-line {
+  width: 70px;
+  height: 3px;
+  background: #c48722;
+  margin: 1.5rem 0;
+}
+
+.understand-quote-content p {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  opacity: 0.96;
+}
+
+.understand-quote-content em {
+  display: block;
+  margin-top: 1rem;
+  color: #d79a2e;
+  font-size: 1.25rem;
+  font-style: italic;
+}
+
+/* Foundation */
+
+.understand-core {
+  width: min(1200px, 92%);
+  margin: 6rem auto;
+}
+
+.understand-section-heading {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.understand-section-heading h2 {
+  margin: 0;
+  color: #072243;
+  font-size: 2.4rem;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+.understand-section-heading span {
+  display: block;
+  width: 64px;
+  height: 2px;
+  margin: 1.25rem auto 0;
+  background: #c48722;
+}
+
+.understand-core-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+}
+
+.understand-core-item {
+  text-align: center;
+}
+
+.understand-core-icon {
+  color: #c48722;
+  margin-bottom: 1rem;
+}
+
+.understand-core-icon svg {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.understand-core-item h3 {
+  margin: 0;
+  color: #072243;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.understand-core-item p {
+  margin-top: 0.9rem;
+  color: #4b5f73;
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+/* Desktop */
+
+@media (min-width: 900px) {
+  .understand-hero {
+    padding: 4.25rem 7vw 0.75rem;
+    gap: 0.75rem 2.5rem;
+  }
+
+  .understand-hero-copy h1 {
+    font-size: clamp(2.4rem, 3.5vw, 3.8rem);
+    line-height: 0.92;
+  }
+
+  .understand-subtitle {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .understand-book-wrap {
+    width: min(23vw, 21rem);
+    margin: 0 auto;
+  }
+
+  .understand-question {
+    margin: 1rem 0;
+  }
+
+  .question-mark {
+    font-size: 1.6rem;
+    margin-bottom: 0.1rem;
+  }
+
+  .understand-question p {
+    font-size: 1.2rem;
+    line-height: 1.35;
+  }
+
+  .understand-amazon-link {
+    margin-top: 0.75rem;
+  }
+
+  .understand-quote {
+    width: min(1100px, 90%);
+    height: 260px;
+    margin: 0 auto 3rem;
+  }
+
+  .understand-quote-bg {
+    height: 100%;
+  }
+
+  .understand-quote-overlay {
+    padding: 2rem 3rem;
+  }
+
+  .understand-quote-content {
+    max-width: 480px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 899px) {
+  .understand-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5.5rem 1.5rem 2rem;
+    gap: 0.75rem;
+  }
+
+  .understand-hero-copy {
+    width: 100%;
+    max-width: none;
+  }
+
+  .understand-hero-copy h1 {
+    font-size: 3.25rem;
+    line-height: 0.95;
+  }
+
+  .understand-book-wrap {
+    width: min(78vw, 20rem);
+    margin: 0 auto -0.25rem;
+    align-self: center;
+  }
+
+  .understand-hero-bottom {
+    width: 100%;
+    max-width: none;
+    margin-top: -0.75rem;
+  }
+
+  .understand-question {
+    margin: 1rem 0 1.25rem;
+  }
+
+  .question-mark {
+    font-size: 1.8rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .understand-question p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+
+  .understand-amazon-link {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .understand-quote {
+    width: 92%;
+    margin: 0 auto 3rem;
+    border-radius: 18px;
+  }
+
+  .understand-quote-bg {
+    height: 16rem;
+    object-fit: cover;
+    object-position: left center;
+  }
+
+  .understand-quote-overlay {
+    position: static;
+    background: #071f3a;
+    padding: 1.5rem;
+  }
+
+  .understand-quote-content {
+    max-width: none;
+  }
+
+  .understand-quote-content h2 {
+    font-size: 1.35rem;
+    line-height: 1.25;
+  }
+
+  .understand-quote-content p {
+    font-size: 0.95rem;
+  }
+
+  .understand-quote-content em {
+    font-size: 1rem;
+  }
+
+  .understand-core {
+    margin: 4rem auto;
+  }
+
+  .understand-section-heading {
+    margin-bottom: 2.5rem;
+  }
+
+  .understand-section-heading h2 {
+    font-size: 2rem;
+  }
+
+  .understand-core-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .understand-core-item {
+    display: flex;
+    text-align: left;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(7, 34, 67, 0.08);
+  }
+
+  .understand-core-item:last-child {
+    border-bottom: none;
+  }
+
+  .understand-core-icon {
+    flex: 0 0 40px;
+    margin: 0;
+  }
+
+  .understand-core-icon svg {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+
+  .understand-core-item h3 {
+    font-size: 1rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .understand-core-item p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+}
+
+/* ==========================================
+   What You'll Learn
+========================================== */
+
+.understand-learn {
+  width: min(1100px, 92%);
+  margin: 5rem auto 6rem;
+}
+
+.understand-learn-list {
+  background: #fffdf8;
+  border: 1px solid rgba(181, 139, 59, 0.18);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  box-shadow: 0 1.5rem 4rem rgba(7, 34, 67, 0.08);
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+}
+
+.understand-learn-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1.6rem;
+}
+
+.understand-learn-icon {
+  flex: 0 0 1.8rem;
+  width: 1.8rem;
+  height: 1.8rem;
+  border: 1px solid #b58b3b;
+  border-radius: 999px;
+  color: #b58b3b;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.understand-learn-item h3 {
+  margin: 0;
+  color: #072243;
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+
+.understand-learn-item p {
+  margin: 0.55rem 0 0;
+  color: #4b5f73;
+  font-size: 0.96rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 899px) {
+  .understand-learn {
+    margin: 4rem auto 5rem;
+  }
+
+  .understand-learn-list {
+    grid-template-columns: 1fr;
+    padding: 1.25rem;
+    border-radius: 1.15rem;
+  }
+
+  .understand-learn-item {
+    padding: 1.25rem 0.75rem;
+    border-bottom: 1px solid rgba(7, 34, 67, 0.08);
+  }
+
+  .understand-learn-item:last-child {
+    border-bottom: none;
+  }
+}
+
+/* ==========================================
+   Choose Your Format
+========================================== */
+
+.understand-format {
+  width: min(1100px, 92%);
+  margin: 5rem auto 6rem;
+  padding: 3.5rem 2rem;
+  background: linear-gradient(180deg, #fffdf8 0%, #f6efe3 100%);
+  border-radius: 1.75rem;
+}
+
+.understand-format-subtitle {
+  margin: 1rem auto 0;
+  max-width: 34rem;
+  color: #102b49;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.understand-format-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  max-width: 850px;
+  margin: 3rem auto 2rem;
+}
+
+.understand-format-card {
+  display: flex;
+  gap: 1.35rem;
+  align-items: center;
+  padding: 2rem;
+  background: #fffdf8;
+  border: 1px solid rgba(181, 139, 59, 0.18);
+  border-radius: 1.25rem;
+  box-shadow: 0 1.25rem 3rem rgba(7, 34, 67, 0.08);
+}
+
+.understand-format-icon {
+  flex: 0 0 4.25rem;
+  width: 4.25rem;
+  height: 4.25rem;
+  border-radius: 999px;
+  background: rgba(181, 139, 59, 0.1);
+  color: #b58b3b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.understand-format-icon svg {
+  width: 2.35rem;
+  height: 2.35rem;
+}
+
+.understand-format-card h3 {
+  margin: 0;
+  color: #072243;
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+.understand-format-card p {
+  margin: 0.5rem 0 0;
+  color: #4b5f73;
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+.understand-format-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  color: #b58b3b;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.understand-format-button {
+  display: flex;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+/* Mobile */
+
+@media (max-width: 899px) {
+  .understand-format {
+    width: 92%;
+    margin: 4rem auto 5rem;
+    padding: 2.5rem 1.25rem;
+    border-radius: 1.25rem;
+  }
+
+  .understand-format-grid {
+    grid-template-columns: 1fr;
+    margin: 2rem auto 1.5rem;
+  }
+
+  .understand-format-card {
+    align-items: flex-start;
+    padding: 1.5rem;
+  }
+
+  .understand-format-icon {
+    flex: 0 0 3.5rem;
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .understand-format-icon svg {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .understand-format-card h3 {
+    font-size: 1.35rem;
+  }
+
+  .understand-format-button {
+    width: 100%;
+  }
+}
+
+.understand-format-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+/* ==========================================
+   Continue Journey
+========================================== */
+
+.understand-next {
+  width: min(900px, 92%);
+  margin: 7rem auto 6rem;
+  text-align: center;
+}
+
+.understand-next-heading h2 {
+  margin: 0;
+  color: #072243;
+  font-size: 2.3rem;
+  font-weight: 500;
+}
+
+.understand-next-heading span {
+  display: block;
+  width: 70px;
+  height: 2px;
+  margin: 1.2rem auto 2rem;
+  background: #c48722;
+}
+
+.understand-next-lead {
+  font-size: 1.45rem;
+  line-height: 1.5;
+  color: #072243;
+  margin-bottom: 1.5rem;
+}
+
+.understand-next-copy {
+  max-width: 42rem;
+  margin: 0 auto 2.75rem;
+  color: #516274;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.understand-next-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: .95rem 2rem;
+
+  background: transparent;
+  border: 1px solid #b58b3b;
+  border-radius: .5rem;
+
+  color: #b58b3b;
+
+  font: inherit;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    background-color .3s ease,
+    color .3s ease,
+    transform .25s ease;
+}
+
+.understand-next-button:hover {
+  background: #b58b3b;
+  color: white;
+  transform: translateX(3px);
+}
+
+@media (max-width: 899px) {
+
+  .understand-next {
+    margin: 5rem auto;
+  }
+
+  .understand-next-heading h2 {
+    font-size: 1.9rem;
+  }
+
+  .understand-next-lead {
+    font-size: 1.2rem;
+  }
+
+  .understand-next-copy {
+    font-size: .98rem;
+    line-height: 1.7;
+  }
+
+  .understand-next-button {
+    width: 100%;
+  }
+
+}
+
 /* Chevrons */
 
 .threshold-chevron,
