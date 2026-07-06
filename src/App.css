@@ -1738,11 +1738,11 @@
 }
 
 .practice-card {
-  display: flex;
+  display: grid;
+  grid-template-columns: 140px 1fr auto;
   align-items: center;
-  justify-content: space-between;
   gap: 1rem;
-  padding: 1.35rem;
+  padding: 1rem;
   border: 1px solid rgba(214, 172, 92, 0.22);
   border-radius: 1.25rem;
   background: rgba(255, 255, 255, 0.055);
@@ -1756,26 +1756,6 @@
   background: rgba(255, 255, 255, 0.075);
 }
 
-.practice-card h2 {
-  margin: 0 0 0.45rem;
-  font-family: Georgia, serif;
-  font-size: 1.45rem;
-  font-weight: 400;
-  color: #f6efe2;
-}
-
-.practice-card p {
-  margin: 0;
-  color: rgba(246, 239, 226, 0.76);
-  line-height: 1.55;
-}
-
-.practice-card > span {
-  color: #d6ac5c;
-  font-size: 1.6rem;
-  flex-shrink: 0;
-}
-
 .practice-card-featured {
   background: linear-gradient(
     135deg,
@@ -1784,8 +1764,84 @@
   );
 }
 
-.practice-next {
-  margin-top: 3rem;
+.practice-card-image {
+  width: 150px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 1rem;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+}
+
+.practice-card-content h2 {
+  margin: 0 0 0.45rem;
+  font-family: Georgia, serif;
+  font-size: 1.45rem;
+  font-weight: 400;
+  color: #f6efe2;
+}
+
+.practice-card-content p {
+  margin: 0;
+  color: rgba(246, 239, 226, 0.76);
+  line-height: 1.55;
+}
+
+.practice-card-meta {
+  display: inline-block;
+  margin-top: 0.8rem;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid rgba(214, 172, 92, 0.45);
+  border-radius: 999px;
+  color: #d6ac5c;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.practice-card-arrow {
+  color: #d6ac5c;
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .practice-card {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "image arrow"
+      "content content";
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .practice-card-image {
+    grid-area: image;
+    width: 150px;
+    height: 150px;
+    border-radius: 0.9rem;
+  }
+
+  .practice-card-content {
+    grid-area: content;
+  }
+
+  .practice-card-arrow {
+    grid-area: arrow;
+    align-self: center;
+  }
+
+  .practice-card-content h2 {
+    font-size: 1.55rem;
+  }
+
+  .practice-card-content p {
+    font-size: 1rem;
+  }
+
+  .practice-card-meta {
+    font-size: 0.72rem;
+    padding: 0.32rem 0.6rem;
+  }
 }
 
 /* Chevrons */
