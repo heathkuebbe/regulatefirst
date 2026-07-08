@@ -2,6 +2,7 @@ import InvitationCard from "./InvitationCard";
 import understandPreview from "../assets/understand-preview.png";
 import practicePreview from "../assets/practice-preview.png";
 import { useState } from "react";
+import rfSymbol from "../assets/rf-symbol.png";
 import MenuDrawer from "./MenuDrawer";
 
 type InvitationProps = {
@@ -9,14 +10,15 @@ type InvitationProps = {
   onBegin: () => void;
   onInvitation: () => void;
   onUnderstand: () => void;
+  onVision: () => void;
   onPractice: () => void;
 };
 
 function Invitation({
-  onReturn,
   onBegin,
   onInvitation,
   onUnderstand,
+  onVision,
   onPractice,
 }: InvitationProps) {
 
@@ -24,13 +26,14 @@ const [menuOpen, setMenuOpen] = useState(false);
 
     return (
     <section className="invitation-room">
-      <button
-        type="button"
-        className="invitation-return"
-        onClick={onReturn}
-      >
-        ← Return
-      </button>
+      <div className="rf-room-brand">
+        <img src={rfSymbol} alt="" className="rf-room-symbol" />
+
+        <div className="rf-room-brand-copy">
+            <strong>Regulate First</strong>
+            <span>Inward first, then forward.</span>
+        </div>
+        </div>
 
       <button
         type="button"
@@ -97,6 +100,7 @@ const [menuOpen, setMenuOpen] = useState(false);
         onInvitation={onInvitation}
         onUnderstand={onUnderstand}
         onPractice={onPractice}
+        onVision={onVision}
         />
 
     </section>

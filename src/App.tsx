@@ -9,6 +9,7 @@ import Discovery from "./components/Discovery";
 import Invitation from "./components/Invitation";
 import Understand from "./components/Understand";
 import Practice from "./components/Practice";
+import BiggerPicture from "./components/BiggerPicture";
 import "./App.css";
 
 type Room =
@@ -21,7 +22,8 @@ type Room =
   | "discovery"
   | "invitation"
   | "understand"
-  | "practice";
+  | "practice"
+  | "bigger-picture";
 
 /*
   DEVELOPMENT START ROOM
@@ -31,7 +33,7 @@ type Room =
   Use "understand" while building the Book Room.
 */
 
-const DEV_ROOM: Room = "invitation";
+const DEV_ROOM: Room = "threshold";
 
 function App() {
    const [room, setRoom] = useState<Room>(DEV_ROOM);
@@ -47,7 +49,10 @@ function App() {
   return (
     <>
       {room === "threshold" && (
-        <Threshold onContinue={() => setRoom("welcome")} />
+        <Threshold
+          onContinue={() => setRoom("welcome")}
+          onReturning={() => setRoom("invitation")}
+        />
       )}
 
       {room === "welcome" && (
@@ -80,6 +85,7 @@ function App() {
           onBegin={() => setRoom("threshold")}
           onInvitation={() => setRoom("invitation")}
           onUnderstand={() => setRoom("understand")}
+          onVision={() => setRoom("bigger-picture")}
           onPractice={() => setRoom("practice")}
         />
       )}
@@ -89,6 +95,7 @@ function App() {
           onBack={() => setRoom("invitation")}
           onBegin={() => setRoom("threshold")}
           onUnderstand={() => setRoom("understand")}
+          onVision={() => setRoom("bigger-picture")}
           onPractice={() => setRoom("practice")}
         />
       )}
@@ -99,6 +106,7 @@ function App() {
           onBegin={() => setRoom("threshold")}
           onInvitation={() => setRoom("invitation")}
           onUnderstand={() => setRoom("understand")}
+          onVision={() => setRoom("bigger-picture")}
           onPractice={() => setRoom("practice")}
           onBaselineSeries={() => setRoom("practice")}
           onQuickReturns={() => setRoom("practice")}
@@ -106,8 +114,22 @@ function App() {
           onDeepReturns={() => setRoom("practice")}
         />
       )}
+      
+      {room === "bigger-picture" && (
+        <BiggerPicture
+          onBack={() => setRoom("understand")}
+          onBegin={() => setRoom("threshold")}
+          onInvitation={() => setRoom("invitation")}
+          onUnderstand={() => setRoom("understand")}
+          onVision={() => setRoom("bigger-picture")}
+          onPractice={() => setRoom("practice")}
+        />
+      )}
+
     </>
   );
 }
+
+
 
 export default App;

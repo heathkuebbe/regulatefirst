@@ -9,19 +9,22 @@ import {
   ListenIcon,
 } from "./RFIcons";
 import MenuDrawer from "./MenuDrawer";
+import rfSymbol from "../assets/rf-symbol.png";
 import { useState } from "react";
 
 type UnderstandProps = {
   onBack: () => void;
   onBegin: () => void;
   onUnderstand: () => void;
+  onVision: () => void;
   onPractice: () => void;
 };
 
 function Understand({
   onBack,
   onBegin,
-   onUnderstand,
+  onUnderstand,
+  onVision,
   onPractice,
 }: UnderstandProps) {
 
@@ -29,9 +32,22 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <section className="understand-room">
-      <button type="button" className="understand-return" onClick={onBack}>
-        ← Back to Previous
-      </button>
+      <button
+        type="button"
+        className="rf-room-brand rf-room-brand-link"
+        onClick={onBack}
+        >
+        <img
+            src={rfSymbol}
+            alt=""
+            className="rf-room-symbol"
+        />
+
+        <div className="rf-room-brand-copy">
+            <strong>Regulate First</strong>
+            <span>Inward first, then forward.</span>
+        </div>
+        </button>
 
       <button
         type="button"
@@ -94,7 +110,6 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
         <div className="understand-quote-overlay">
           <div className="understand-quote-content">
             <h2>
-              <span className="understand-quote-mark">“</span>
               This isn't a book about becoming someone new.
               <br />
               It's about returning to who you are beneath the noise.
@@ -308,10 +323,30 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
             onBegin={onBegin}
             onInvitation={onBack}
             onUnderstand={onUnderstand}
+            onVision={onVision}
             onPractice={onPractice}
             />
 
-    <section className="understand-next">
+     <section className="understand-vision">
+        <p className="understand-vision-kicker">The Bigger Picture</p>
+
+        <h2>Regulation is the foundation, not the destination.</h2>
+
+        <p>
+            Regulate First begins with returning to steadiness. But the larger path
+            opens into strength, connection, and a more awakened way of living.
+        </p>
+
+        <button
+            type="button"
+            className="understand-vision-button"
+            onClick={onVision}
+        >
+            Explore the Vision →
+        </button>
+        </section>
+   
+     <section className="understand-next">
 
         <div className="understand-next-heading">
             <h2>Continue the Journey</h2>

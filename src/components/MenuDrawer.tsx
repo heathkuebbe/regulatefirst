@@ -5,6 +5,7 @@ type MenuDrawerProps = {
   onInvitation: () => void;
   onUnderstand: () => void;
   onPractice: () => void;
+  onVision: () => void;
 };
 
 function MenuDrawer({
@@ -14,6 +15,7 @@ function MenuDrawer({
   onInvitation,
   onUnderstand,
   onPractice,
+  onVision,
 }: MenuDrawerProps) {
   if (!isOpen) return null;
 
@@ -49,9 +51,21 @@ function MenuDrawer({
             Understand
           </button>
 
+          <button type="button" onClick={() => handleNavigate(onVision)}>
+            Vision
+          </button>
+          
           <button type="button" onClick={() => handleNavigate(onPractice)}>
             Practice
           </button>
+
+          <a
+            href="mailto:heath@regulatefirst.com?subject=Regulate%20First%20Question"
+            className="menu-drawer-contact"
+           >
+            Contact
+          </a>
+
         </nav>
       </aside>
     </div>
