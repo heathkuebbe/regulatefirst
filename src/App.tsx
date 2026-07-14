@@ -25,18 +25,141 @@ type Room =
   | "practice"
   | "bigger-picture";
 
-/*
-  DEVELOPMENT START ROOM
+const roomPaths: Partial<Record<Room, string>> = {
+  threshold: "/",
+  invitation: "/invitation",
+  understand: "/understand",
+  practice: "/practice",
+  "bigger-picture": "/bigger-picture",
+};
 
-  Use "threshold" for the full experience.
-  Use "invitation" to skip straight to the Invitation room.
-  Use "understand" while building the Book Room.
-*/
+const roomSeo: Partial<
+  Record<
+    Room,
+    {
+      title: string;
+      description: string;
+      path: string;
+    }
+  >
+> = {
+  threshold: {
+    title:
+      "Regulate First | Practical Nervous System Regulation for Everyday Life",
+    description:
+      "Regulate First offers practical tools and guided practices to help you pause, regulate, reconnect, and move forward.",
+    path: "/",
+  },
 
-const DEV_ROOM: Room = "threshold";
+  invitation: {
+    title: "Begin the Journey | Regulate First",
+    description:
+      "Explore the Regulate First book, guided practices, and the larger vision behind an inward-first approach to everyday life.",
+    path: "/invitation",
+  },
+
+  understand: {
+    title: "The Regulate First Book | Regulation, Awareness and Daily Life",
+    description:
+      "Discover Regulate First, a practical path for regulation, awareness, and daily life by Heath Kruebbe.",
+    path: "/understand",
+  },
+
+  practice: {
+    title: "Guided Regulation Practices | Regulate First",
+    description:
+      "Explore guided regulation practices, the Baseline Series, Quick Practices, and deeper tools for returning to yourself.",
+    path: "/practice",
+  },
+
+  "bigger-picture": {
+    title: "The Bigger Picture | Regulate First",
+    description:
+      "Explore the larger Regulate First journey through regulation, strengthening, connection, and awakening.",
+    path: "/bigger-picture",
+  },
+};
+
+function getInitialRoom(): Room {
+  const path = window.location.pathname.replace(/\/+$/, "") || "/";
+
+  switch (path) {
+    case "/invitation":
+      return "invitation";
+    case "/understand":
+      return "understand";
+    case "/practice":
+      return "practice";
+    case "/bigger-picture":
+      return "bigger-picture";
+    default:
+      return "threshold";
+  }
+}
+
+const DEV_ROOM: Room = getInitialRoom();
 
 function App() {
-   const [room, setRoom] = useState<Room>(DEV_ROOM);
+  const [room, setRoom] = useState<Room>(DEV_ROOM);
+
+  const navigateToRoom = (nextRoom: Room) => {
+    const path = roomPaths[nextRoom];
+
+    if (path && window.location.pathname !== path) {
+      window.history.pushState({ room: nextRoom }, "", path);
+    }
+
+    setRoom(nextRoom);
+  };
+
+  useEffect(() => {
+    const seo = roomSeo[room] ?? roomSeo.threshold;
+
+    if (!seo) return;
+
+    const absoluteUrl = `https://regulatefirst.com${seo.path}`;
+
+    document.title = seo.title;
+
+    const setMeta = (selector: string, value: string) => {
+      const element = document.querySelector<HTMLMetaElement>(selector);
+
+      if (element) {
+        element.setAttribute("content", value);
+      }
+    };
+
+    setMeta('meta[name="description"]', seo.description);
+    setMeta('meta[property="og:title"]', seo.title);
+    setMeta('meta[property="og:description"]', seo.description);
+    setMeta('meta[property="og:url"]', absoluteUrl);
+    setMeta('meta[name="twitter:title"]', seo.title);
+    setMeta('meta[name="twitter:description"]', seo.description);
+
+    let canonical = document.querySelector<HTMLLinkElement>(
+      'link[rel="canonical"]',
+    );
+
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.rel = "canonical";
+      document.head.appendChild(canonical);
+    }
+
+    canonical.href = absoluteUrl;
+  }, [room]);
+
+  useEffect(() => {
+    const handlePopState = () => {
+      setRoom(getInitialRoom());
+    };
+
+    window.addEventListener("popstate", handlePopState);
+
+    return () => {
+      window.removeEventListener("popstate", handlePopState);
+    };
+  }, []);
 
   useEffect(() => {
     window.scrollTo({
@@ -51,7 +174,7 @@ function App() {
       {room === "threshold" && (
         <Threshold
           onContinue={() => setRoom("welcome")}
-          onReturning={() => setRoom("invitation")}
+          onReturning={() => navigateToRoom("invitation")}
         />
       )}
 
@@ -76,60 +199,57 @@ function App() {
       )}
 
       {room === "discovery" && (
-        <Discovery onContinue={() => setRoom("invitation")} />
+        <Discovery onContinue={() => navigateToRoom("invitation")} />
       )}
 
       {room === "invitation" && (
         <Invitation
           onReturn={() => setRoom("discovery")}
-          onBegin={() => setRoom("threshold")}
-          onInvitation={() => setRoom("invitation")}
-          onUnderstand={() => setRoom("understand")}
-          onVision={() => setRoom("bigger-picture")}
-          onPractice={() => setRoom("practice")}
+          onBegin={() => navigateToRoom("threshold")}
+          onInvitation={() => navigateToRoom("invitation")}
+          onUnderstand={() => navigateToRoom("understand")}
+          onVision={() => navigateToRoom("bigger-picture")}
+          onPractice={() => navigateToRoom("practice")}
         />
       )}
 
       {room === "understand" && (
         <Understand
-          onBack={() => setRoom("invitation")}
-          onBegin={() => setRoom("threshold")}
-          onUnderstand={() => setRoom("understand")}
-          onVision={() => setRoom("bigger-picture")}
-          onPractice={() => setRoom("practice")}
+          onBack={() => navigateToRoom("invitation")}
+          onBegin={() => navigateToRoom("threshold")}
+          onUnderstand={() => navigateToRoom("understand")}
+          onVision={() => navigateToRoom("bigger-picture")}
+          onPractice={() => navigateToRoom("practice")}
         />
       )}
 
       {room === "practice" && (
         <Practice
-          onBack={() => setRoom("invitation")}
-          onBegin={() => setRoom("threshold")}
-          onInvitation={() => setRoom("invitation")}
-          onUnderstand={() => setRoom("understand")}
-          onVision={() => setRoom("bigger-picture")}
-          onPractice={() => setRoom("practice")}
-          onBaselineSeries={() => setRoom("practice")}
-          onQuickReturns={() => setRoom("practice")}
-          onQuickResets={() => setRoom("practice")}
-          onDeepReturns={() => setRoom("practice")}
-        />
-      )}
-      
-      {room === "bigger-picture" && (
-        <BiggerPicture
-          onBack={() => setRoom("understand")}
-          onBegin={() => setRoom("threshold")}
-          onInvitation={() => setRoom("invitation")}
-          onUnderstand={() => setRoom("understand")}
-          onVision={() => setRoom("bigger-picture")}
-          onPractice={() => setRoom("practice")}
+          onBack={() => navigateToRoom("invitation")}
+          onBegin={() => navigateToRoom("threshold")}
+          onInvitation={() => navigateToRoom("invitation")}
+          onUnderstand={() => navigateToRoom("understand")}
+          onVision={() => navigateToRoom("bigger-picture")}
+          onPractice={() => navigateToRoom("practice")}
+          onBaselineSeries={() => navigateToRoom("practice")}
+          onQuickReturns={() => navigateToRoom("practice")}
+          onQuickResets={() => navigateToRoom("practice")}
+          onDeepReturns={() => navigateToRoom("practice")}
         />
       )}
 
+      {room === "bigger-picture" && (
+        <BiggerPicture
+          onBack={() => navigateToRoom("understand")}
+          onBegin={() => navigateToRoom("threshold")}
+          onInvitation={() => navigateToRoom("invitation")}
+          onUnderstand={() => navigateToRoom("understand")}
+          onVision={() => navigateToRoom("bigger-picture")}
+          onPractice={() => navigateToRoom("practice")}
+        />
+      )}
     </>
   );
 }
-
-
 
 export default App;
