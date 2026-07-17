@@ -8,6 +8,7 @@ import Recognition from "./components/Recognition";
 import Discovery from "./components/Discovery";
 import Invitation from "./components/Invitation";
 import Understand from "./components/Understand";
+import BehindRegulateFirst from "./components/BehindRegulateFirst";
 import Practice from "./components/Practice";
 import BiggerPicture from "./components/BiggerPicture";
 import "./App.css";
@@ -22,6 +23,7 @@ type Room =
   | "discovery"
   | "invitation"
   | "understand"
+  | "behind-regulate-first"
   | "practice"
   | "bigger-picture";
 
@@ -29,6 +31,7 @@ const roomPaths: Partial<Record<Room, string>> = {
   threshold: "/",
   invitation: "/invitation",
   understand: "/understand",
+  "behind-regulate-first": "/behind-regulate-first",
   practice: "/practice",
   "bigger-picture": "/bigger-picture",
 };
@@ -65,6 +68,13 @@ const roomSeo: Partial<
     path: "/understand",
   },
 
+  "behind-regulate-first": {
+    title: "Behind Regulate First | The Story Behind the Work",
+    description:
+      "Explore the lifelong question, personal journey, and deeper longing that gave rise to Regulate First.",
+    path: "/behind-regulate-first",
+  },
+
   practice: {
     title: "Guided Regulation Practices | Regulate First",
     description:
@@ -86,12 +96,19 @@ function getInitialRoom(): Room {
   switch (path) {
     case "/invitation":
       return "invitation";
+
     case "/understand":
       return "understand";
+
+    case "/behind-regulate-first":
+      return "behind-regulate-first";
+
     case "/practice":
       return "practice";
+
     case "/bigger-picture":
       return "bigger-picture";
+
     default:
       return "threshold";
   }
@@ -208,6 +225,7 @@ function App() {
           onBegin={() => navigateToRoom("threshold")}
           onInvitation={() => navigateToRoom("invitation")}
           onUnderstand={() => navigateToRoom("understand")}
+          onBehind={() => navigateToRoom("behind-regulate-first")}
           onVision={() => navigateToRoom("bigger-picture")}
           onPractice={() => navigateToRoom("practice")}
         />
@@ -218,6 +236,18 @@ function App() {
           onBack={() => navigateToRoom("invitation")}
           onBegin={() => navigateToRoom("threshold")}
           onUnderstand={() => navigateToRoom("understand")}
+          onBehind={() => navigateToRoom("behind-regulate-first")}
+          onVision={() => navigateToRoom("bigger-picture")}
+          onPractice={() => navigateToRoom("practice")}
+        />
+      )}
+
+      {room === "behind-regulate-first" && (
+        <BehindRegulateFirst
+          onBegin={() => navigateToRoom("threshold")}
+          onInvitation={() => navigateToRoom("invitation")}
+          onUnderstand={() => navigateToRoom("understand")}
+          onBehind={() => navigateToRoom("behind-regulate-first")}
           onVision={() => navigateToRoom("bigger-picture")}
           onPractice={() => navigateToRoom("practice")}
         />
@@ -229,6 +259,7 @@ function App() {
           onBegin={() => navigateToRoom("threshold")}
           onInvitation={() => navigateToRoom("invitation")}
           onUnderstand={() => navigateToRoom("understand")}
+          onBehind={() => navigateToRoom("behind-regulate-first")}
           onVision={() => navigateToRoom("bigger-picture")}
           onPractice={() => navigateToRoom("practice")}
           onBaselineSeries={() => navigateToRoom("practice")}
@@ -244,6 +275,7 @@ function App() {
           onBegin={() => navigateToRoom("threshold")}
           onInvitation={() => navigateToRoom("invitation")}
           onUnderstand={() => navigateToRoom("understand")}
+          onBehind={() => navigateToRoom("behind-regulate-first")}
           onVision={() => navigateToRoom("bigger-picture")}
           onPractice={() => navigateToRoom("practice")}
         />

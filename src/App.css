@@ -1605,13 +1605,116 @@
   margin-top: 2.5rem;
 }
 
+/* UNDERSTAND — BEHIND REGULATE FIRST */
+
+.understand-behind {
+  padding: 8rem 1.5rem 7rem;
+  background: #f7f3eb;
+  text-align: center;
+}
+
+.understand-behind-inner {
+  width: min(100%, 680px);
+  margin: 0 auto;
+}
+
+.understand-behind-kicker {
+  margin: 0 0 1.25rem;
+  color: #a87425;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.understand-behind h2 {
+  margin: 0;
+  color: #011821;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.understand-behind-rule {
+  width: 44px;
+  height: 1px;
+  margin: 2rem auto;
+  background: #b78538;
+}
+
+.understand-behind p {
+  margin: 0 auto 1.25rem;
+  color: rgba(1, 24, 33, 0.78);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.understand-behind-opening {
+  color: #011821 !important;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.55rem, 4vw, 2rem) !important;
+  font-style: italic;
+  line-height: 1.4 !important;
+}
+
+.understand-behind-button {
+  margin-top: 1.75rem;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid rgba(168, 116, 37, 0.55);
+  background: transparent;
+  color: #8d5f1d;
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition:
+    color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.understand-behind-button:hover {
+  color: #011821;
+  border-color: #011821;
+  transform: translateY(-2px);
+}
+
+.understand-behind-button:focus-visible {
+  outline: 2px solid #a87425;
+  outline-offset: 6px;
+}
+
+@media (max-width: 640px) {
+  .understand-behind {
+    padding: 5.5rem 1.4rem;
+  }
+
+  .understand-behind p {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .understand-behind-button {
+    transition: none;
+  }
+
+  .understand-behind-button:hover {
+    transform: none;
+  }
+}
+
 /* ==========================================
    Bigger Picture Blurb
 ========================================== */
 
 .understand-vision {
   width: min(900px, 92%);
-  margin: 4rem auto 5rem;
+  margin: 5.5rem auto 5rem;
   padding: 2.5rem;
   text-align: center;
   background: #fffdf8;
@@ -2191,6 +2294,709 @@
 
 .practice-room .rf-room-brand-copy span {
   color: rgba(246, 239, 226, 0.72);
+}
+
+/* =========================================
+   BEHIND REGULATE FIRST ROOM
+========================================= */
+
+.behind-room {
+  min-height: 100vh;
+  background: #f7f4ed;
+  color: #10262e;
+  overflow-x: hidden;
+}
+
+.behind-room button {
+  font: inherit;
+}
+
+.behind-story-container {
+  width: min(680px, calc(100% - 3rem));
+  margin: 0 auto;
+}
+
+.behind-hero {
+  padding: 11rem 0 8rem;
+}
+
+.behind-room-label,
+.behind-section-label,
+.behind-next-kicker {
+  margin: 0 0 1.5rem;
+  color: #9a7a42;
+  font-family: inherit;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.behind-hero h1,
+.behind-story-section h2,
+.behind-next h2,
+.behind-next-option h3 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 500;
+}
+
+.behind-hero h1 {
+  margin: 0 0 4rem;
+  font-size: clamp(3.4rem, 9vw, 5.8rem);
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+}
+
+.behind-opening,
+.behind-story-copy {
+  font-size: 1.12rem;
+  line-height: 1.9;
+}
+
+.behind-opening p,
+.behind-story-copy p {
+  margin: 0 0 1.7rem;
+}
+
+.behind-opening p:last-child,
+.behind-story-copy p:last-child {
+  margin-bottom: 0;
+}
+
+.behind-seeker-lines,
+.behind-drift-list,
+.behind-role-list,
+.behind-here-lines,
+.behind-again-lines,
+.behind-return-list,
+.behind-beneath-list,
+.behind-before-list,
+.behind-still-list,
+.behind-more-than-list {
+  display: block;
+  margin: 2.5rem 0;
+}
+
+.behind-seeker-lines span,
+.behind-drift-list span,
+.behind-role-list span,
+.behind-here-lines span,
+.behind-again-lines span,
+.behind-return-list span,
+.behind-beneath-list span,
+.behind-before-list span,
+.behind-still-list span,
+.behind-more-than-list span {
+  display: block;
+  margin: 0.65rem 0;
+}
+
+.behind-seeker-lines {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.6rem;
+  line-height: 1.35;
+}
+
+.behind-central-question {
+  margin: 7rem auto 0;
+  padding: 0;
+  border: 0;
+  color: #10262e;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.12;
+  text-align: center;
+}
+
+.behind-central-question span {
+  display: block;
+  margin-top: 0.35em;
+}
+
+.behind-story {
+  display: block;
+}
+
+.behind-story-section {
+  padding: 8rem 0;
+}
+
+.behind-story-section + .behind-story-section {
+  border-top: 1px solid rgba(16, 38, 46, 0.08);
+}
+
+.behind-story-section h2 {
+  max-width: 620px;
+  margin: 0 0 3.25rem;
+  font-size: clamp(2.4rem, 6vw, 3.8rem);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+
+.behind-emphasis,
+.behind-statement {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.75rem, 4vw, 2.35rem);
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.behind-drift-list,
+.behind-role-list,
+.behind-return-list,
+.behind-beneath-list,
+.behind-before-list,
+.behind-still-list,
+.behind-more-than-list {
+  padding-left: 1.5rem;
+  border-left: 1px solid rgba(154, 122, 66, 0.45);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.45rem;
+  line-height: 1.45;
+}
+
+.behind-role-list {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.behind-birds-moment {
+  margin: 5rem 0;
+  text-align: center;
+}
+
+.behind-birds-moment p {
+  margin: 0.5rem 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(2rem, 5vw, 3.1rem);
+  line-height: 1.15;
+}
+
+.behind-birds-moment p:last-child {
+  margin-top: 1.5rem;
+  font-style: italic;
+}
+
+.behind-here-lines,
+.behind-again-lines {
+  margin: 4rem 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  line-height: 1.25;
+  text-align: center;
+}
+
+.behind-here-lines span,
+.behind-again-lines span {
+  margin: 0.8rem 0;
+}
+
+.behind-final-reflection {
+  margin: 4.5rem 0 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  line-height: 1.3;
+}
+
+.behind-final-reflection p {
+  margin-bottom: 1.5rem;
+}
+
+.behind-signature {
+  margin: 7rem 0 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(2.6rem, 7vw, 4.6rem);
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1;
+  text-align: center;
+}
+
+.behind-next {
+  padding: 8rem max(1.5rem, 5vw);
+  background: #10262e;
+  color: #f7f4ed;
+}
+
+.behind-next-heading {
+  width: min(980px, 100%);
+  margin: 0 auto 4rem;
+  text-align: center;
+}
+
+.behind-next-heading .behind-section-label {
+  color: #c4a56a;
+}
+
+.behind-next h2 {
+  margin: 0;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  line-height: 1.05;
+}
+
+.behind-next-grid {
+  display: grid;
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  gap: 1.25rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.behind-next-option {
+  display: flex;
+  min-height: 330px;
+  padding: 2.5rem;
+  border: 1px solid rgba(247, 244, 237, 0.16);
+  flex-direction: column;
+}
+
+.behind-next-option h3 {
+  margin: 0 0 1rem;
+  font-size: 2rem;
+  line-height: 1.1;
+}
+
+.behind-next-option > p:not(.behind-next-kicker) {
+  margin: 0 0 2rem;
+  color: rgba(247, 244, 237, 0.76);
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.behind-next-option button {
+  width: fit-content;
+  margin-top: auto;
+  padding: 0.8rem 0;
+  border: 0;
+  border-bottom: 1px solid rgba(196, 165, 106, 0.8);
+  background: transparent;
+  color: #f7f4ed;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.behind-next-option button:hover {
+  color: #c4a56a;
+}
+
+.behind-next-option button:focus-visible {
+  outline: 2px solid #c4a56a;
+  outline-offset: 5px;
+}
+
+@media (max-width: 900px) {
+  .behind-next-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .behind-next-option {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .behind-story-container {
+    width: min(100% - 2.25rem, 680px);
+  }
+
+  .behind-hero {
+    padding: 9rem 0 6.5rem;
+  }
+
+  .behind-hero h1 {
+    margin-bottom: 3rem;
+  }
+
+  .behind-opening,
+  .behind-story-copy {
+    font-size: 1.03rem;
+    line-height: 1.8;
+  }
+
+  .behind-central-question {
+    margin-top: 5.5rem;
+  }
+
+  .behind-story-section {
+    padding: 6rem 0;
+  }
+
+  .behind-story-section h2 {
+    margin-bottom: 2.5rem;
+  }
+
+  .behind-birds-moment {
+    margin: 4rem 0;
+  }
+
+  .behind-signature {
+    margin-top: 5.5rem;
+  }
+
+  .behind-next {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  .behind-next-heading {
+    margin-bottom: 3rem;
+  }
+
+  .behind-next-option {
+    padding: 2rem;
+  }
+}
+
+/* =========================================
+   BEHIND REGULATE FIRST — PASS 2
+   Emotional moments and transitions
+========================================= */
+
+/* Opening question: create a true pause in the room */
+
+.behind-central-question {
+  position: relative;
+  max-width: 760px;
+  margin-top: 9rem;
+  padding: 5.5rem 0;
+}
+
+.behind-central-question::before,
+.behind-central-question::after {
+  position: absolute;
+  left: 50%;
+  width: 72px;
+  height: 1px;
+  background: rgba(154, 122, 66, 0.5);
+  content: "";
+  transform: translateX(-50%);
+}
+
+.behind-central-question::before {
+  top: 0;
+}
+
+.behind-central-question::after {
+  bottom: 0;
+}
+
+
+/* Give each movement a quieter entrance */
+
+.behind-story-section {
+  position: relative;
+}
+
+.behind-section-label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.behind-section-label::after {
+  width: 42px;
+  height: 1px;
+  background: rgba(154, 122, 66, 0.45);
+  content: "";
+}
+
+
+/* Repeated phrases should feel like poetry, not lists */
+
+.behind-drift-list span,
+.behind-role-list span,
+.behind-return-list span,
+.behind-beneath-list span,
+.behind-before-list span,
+.behind-still-list span,
+.behind-more-than-list span {
+  margin: 0.38rem 0;
+}
+
+.behind-return-list,
+.behind-beneath-list,
+.behind-before-list,
+.behind-still-list,
+.behind-more-than-list {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.behind-drift-list span:last-child,
+.behind-beneath-list span:last-child,
+.behind-before-list span:last-child,
+.behind-still-list span:last-child,
+.behind-more-than-list span:last-child {
+  margin-top: 1rem;
+}
+
+
+/* The birds moment: the emotional center of the essay */
+
+.behind-birds-moment {
+  position: relative;
+  margin: 7rem 0;
+  padding: 4rem 1rem;
+}
+
+.behind-birds-moment::before,
+.behind-birds-moment::after {
+  position: absolute;
+  left: 50%;
+  width: 34px;
+  height: 1px;
+  background: rgba(16, 38, 46, 0.16);
+  content: "";
+  transform: translateX(-50%);
+}
+
+.behind-birds-moment::before {
+  top: 0;
+}
+
+.behind-birds-moment::after {
+  bottom: 0;
+}
+
+.behind-birds-moment p {
+  color: rgba(16, 38, 46, 0.82);
+}
+
+.behind-birds-moment p:last-child {
+  color: #10262e;
+  font-size: clamp(2.35rem, 5.5vw, 3.6rem);
+}
+
+
+/* Give “Here” and “Again” a more deliberate cadence */
+
+.behind-here-lines,
+.behind-again-lines {
+  padding: 2rem 0;
+}
+
+.behind-here-lines span:first-child,
+.behind-here-lines span:last-child,
+.behind-again-lines span:first-child {
+  color: #10262e;
+  font-size: 1.16em;
+}
+
+.behind-here-lines span:not(:first-child):not(:last-child),
+.behind-again-lines span:not(:first-child) {
+  color: rgba(16, 38, 46, 0.66);
+}
+
+
+/* Quiet emphasis throughout the essay */
+
+.behind-emphasis {
+  position: relative;
+  margin-top: 3.25rem !important;
+  margin-bottom: 3.25rem !important;
+  padding-left: 1.5rem;
+}
+
+.behind-emphasis::before {
+  position: absolute;
+  top: 0.2em;
+  bottom: 0.2em;
+  left: 0;
+  width: 1px;
+  background: rgba(154, 122, 66, 0.55);
+  content: "";
+}
+
+.behind-statement {
+  margin-top: 3rem !important;
+  margin-bottom: 3rem !important;
+}
+
+
+/* Final welcome: allow the room to settle before the signature */
+
+.behind-welcome-section {
+  padding-bottom: 10rem;
+}
+
+.behind-final-reflection {
+  position: relative;
+  margin-top: 5.5rem;
+  padding-top: 4.5rem;
+}
+
+.behind-final-reflection::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 52px;
+  height: 1px;
+  background: rgba(154, 122, 66, 0.5);
+  content: "";
+}
+
+.behind-signature {
+  position: relative;
+  margin-top: 10rem;
+  padding-top: 5rem;
+}
+
+.behind-signature::before {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 64px;
+  height: 1px;
+  background: rgba(154, 122, 66, 0.5);
+  content: "";
+  transform: translateX(-50%);
+}
+
+
+/* Strengthen the transition back into the website journey */
+
+.behind-next {
+  position: relative;
+}
+
+.behind-next::before {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 54px;
+  background: #c4a56a;
+  content: "";
+  transform: translate(-50%, -50%);
+}
+
+.behind-next-heading {
+  margin-bottom: 5rem;
+}
+
+.behind-next-option {
+  position: relative;
+  overflow: hidden;
+  transition:
+    border-color 220ms ease,
+    transform 220ms ease,
+    background-color 220ms ease;
+}
+
+.behind-next-option::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 2px;
+  background: #c4a56a;
+  content: "";
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition:
+    opacity 220ms ease,
+    transform 220ms ease;
+}
+
+.behind-next-option:hover {
+  border-color: rgba(196, 165, 106, 0.5);
+  background: rgba(247, 244, 237, 0.025);
+  transform: translateY(-4px);
+}
+
+.behind-next-option:hover::before {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.behind-next-option button {
+  position: relative;
+  border-bottom: 0;
+}
+
+.behind-next-option button::after {
+  position: absolute;
+  right: 0;
+  bottom: 0.45rem;
+  left: 0;
+  height: 1px;
+  background: rgba(196, 165, 106, 0.8);
+  content: "";
+  transform: scaleX(0.35);
+  transform-origin: left;
+  transition: transform 220ms ease;
+}
+
+.behind-next-option button:hover::after,
+.behind-next-option button:focus-visible::after {
+  transform: scaleX(1);
+}
+
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+  .behind-next-option,
+  .behind-next-option::before,
+  .behind-next-option button::after {
+    transition: none;
+  }
+
+  .behind-next-option:hover {
+    transform: none;
+  }
+}
+
+
+/* Pass 2 mobile refinements */
+
+@media (max-width: 640px) {
+  .behind-central-question {
+    margin-top: 7rem;
+    padding: 4rem 0;
+  }
+
+  .behind-central-question::before,
+  .behind-central-question::after {
+    width: 52px;
+  }
+
+  .behind-birds-moment {
+    margin: 5rem 0;
+    padding: 3.25rem 0;
+  }
+
+  .behind-emphasis {
+    padding-left: 1.15rem;
+  }
+
+  .behind-welcome-section {
+    padding-bottom: 8rem;
+  }
+
+  .behind-final-reflection {
+    margin-top: 4.5rem;
+    padding-top: 3.5rem;
+  }
+
+  .behind-signature {
+    margin-top: 7rem;
+    padding-top: 4rem;
+  }
+
+  .behind-next-heading {
+    margin-bottom: 3.5rem;
+  }
+
+  .behind-next-option:hover {
+    transform: none;
+  }
 }
 
 /* ==========================================

@@ -15,6 +15,7 @@ type BiggerPictureProps = {
   onBegin: () => void;
   onInvitation: () => void;
   onUnderstand: () => void;
+  onBehind: () => void;
   onVision: () => void;
   onPractice: () => void;
 };
@@ -54,6 +55,7 @@ function BiggerPicture({
   onBegin,
   onInvitation,
   onUnderstand,
+  onBehind,
   onPractice,
   onVision,
 }: BiggerPictureProps) {
@@ -188,6 +190,7 @@ function BiggerPicture({
         onBegin={onBegin}
         onInvitation={onInvitation}
         onUnderstand={onUnderstand}
+        onBehind={onBehind}
         onVision={onVision}
         onPractice={onPractice}
       />

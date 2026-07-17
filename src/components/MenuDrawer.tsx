@@ -4,6 +4,7 @@ type MenuDrawerProps = {
   onBegin: () => void;
   onInvitation: () => void;
   onUnderstand: () => void;
+  onBehind: () => void;
   onPractice: () => void;
   onVision: () => void;
 };
@@ -14,6 +15,7 @@ function MenuDrawer({
   onBegin,
   onInvitation,
   onUnderstand,
+  onBehind,
   onPractice,
   onVision,
 }: MenuDrawerProps) {
@@ -51,10 +53,14 @@ function MenuDrawer({
             Understand
           </button>
 
+          <button type="button" onClick={() => handleNavigate(onBehind)}>
+            Behind Regulate First
+          </button>
+
           <button type="button" onClick={() => handleNavigate(onVision)}>
             Vision
           </button>
-          
+
           <button type="button" onClick={() => handleNavigate(onPractice)}>
             Practice
           </button>
@@ -62,10 +68,9 @@ function MenuDrawer({
           <a
             href="mailto:heath@regulatefirst.com?subject=Regulate%20First%20Question"
             className="menu-drawer-contact"
-           >
+          >
             Contact
           </a>
-
         </nav>
       </aside>
     </div>

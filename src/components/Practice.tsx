@@ -14,6 +14,7 @@ type PracticeProps = {
   onBegin: () => void;
   onInvitation: () => void;
   onUnderstand: () => void;
+  onBehind: () => void;
   onVision: () => void;
   onPractice: () => void;
   onBaselineSeries: () => void;
@@ -91,6 +92,7 @@ function Practice({
   onBegin,
   onInvitation,
   onUnderstand,
+  onBehind,
   onVision,
   onPractice,
 }: PracticeProps) {
@@ -273,6 +275,7 @@ function Practice({
         onBegin={onBegin}
         onInvitation={onInvitation}
         onUnderstand={onUnderstand}
+        onBehind={onBehind}
         onVision={onVision}
         onPractice={onPractice}
       />

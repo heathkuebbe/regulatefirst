@@ -10,6 +10,7 @@ type InvitationProps = {
   onBegin: () => void;
   onInvitation: () => void;
   onUnderstand: () => void;
+  onBehind: () => void;
   onVision: () => void;
   onPractice: () => void;
 };
@@ -18,6 +19,7 @@ function Invitation({
   onBegin,
   onInvitation,
   onUnderstand,
+  onBehind,
   onVision,
   onPractice,
 }: InvitationProps) {
@@ -65,10 +67,14 @@ const [menuOpen, setMenuOpen] = useState(false);
           <InvitationCard
             title="Understand It"
             badge="Recommended"
-            description="Explore the book that explains the why behind what you’ve discovered."
+            description="Explore the ideas, the story behind them, and the larger vision."
             imageSrc={understandPreview}
             imageAlt="Regulate First book in a warm study"
-            points={["Read the book", "See the bigger picture"]}
+            points={[
+              "Discover the core ideas",
+              "Step behind Regulate First",
+              "Explore the Bigger Picture",
+            ]}
             onClick={onUnderstand}
           />
 
@@ -99,8 +105,10 @@ const [menuOpen, setMenuOpen] = useState(false);
         onBegin={onBegin}
         onInvitation={onInvitation}
         onUnderstand={onUnderstand}
-        onPractice={onPractice}
+        onBehind={onBehind}
         onVision={onVision}
+        onPractice={onPractice}
+        
         />
 
     </section>

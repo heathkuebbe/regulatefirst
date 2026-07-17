@@ -16,6 +16,7 @@ type UnderstandProps = {
   onBack: () => void;
   onBegin: () => void;
   onUnderstand: () => void;
+  onBehind: () => void;
   onVision: () => void;
   onPractice: () => void;
 };
@@ -24,6 +25,7 @@ function Understand({
   onBack,
   onBegin,
   onUnderstand,
+  onBehind,
   onVision,
   onPractice,
 }: UnderstandProps) {
@@ -316,6 +318,42 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
                 </a>
             </div>
 
+      <section className="understand-behind">
+        <div className="understand-behind-inner">
+            <p className="understand-behind-kicker">Beyond the Book</p>
+
+            <h2>Behind Regulate First</h2>
+
+            <div className="understand-behind-rule" />
+
+            <p className="understand-behind-opening">
+                Every framework begins with a question.
+            </p>
+
+            <p>
+                Regulate First didn't begin as a book.
+            </p>
+
+            <p>
+                It began as a lifelong search to understand what allows people
+                to come fully alive—and what keeps us from it.
+            </p>
+
+            <p>
+                Behind Regulate First shares the question that began this journey, 
+                the experiences that shaped it, and the story behind the work.
+            </p>
+
+            <button
+                type="button"
+                className="understand-behind-button"
+                onClick={onBehind}
+            >
+                Step behind Regulate First →
+            </button>
+        </div>
+     </section>
+
      </section>
         <MenuDrawer
             isOpen={isMenuOpen}
@@ -323,6 +361,7 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
             onBegin={onBegin}
             onInvitation={onBack}
             onUnderstand={onUnderstand}
+            onBehind={onBehind}
             onVision={onVision}
             onPractice={onPractice}
             />
@@ -330,11 +369,11 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
      <section className="understand-vision">
         <p className="understand-vision-kicker">The Bigger Picture</p>
 
-        <h2>Regulation is the foundation, not the destination.</h2>
+        <h2>Where the Journey Leads</h2>
 
         <p>
-            Regulate First begins with returning to steadiness. But the larger path
-            opens into strength, connection, and a more awakened way of living.
+            Regulate First begins with learning to return to yourself. But that return is only the beginning. 
+            The larger journey leads toward greater strength, deeper connection, and a more awakened way of living.
         </p>
 
         <button
