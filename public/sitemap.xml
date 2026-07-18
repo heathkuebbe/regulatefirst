@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
     <loc>https://regulatefirst.com/</loc>
   </url>
@@ -13,10 +14,15 @@
   </url>
 
   <url>
-    <loc>https://regulatefirst.com/practice</loc>
+    <loc>https://regulatefirst.com/behind-regulate-first</loc>
   </url>
 
   <url>
     <loc>https://regulatefirst.com/bigger-picture</loc>
   </url>
+
+  <url>
+    <loc>https://regulatefirst.com/practice</loc>
+  </url>
+
 </urlset>
