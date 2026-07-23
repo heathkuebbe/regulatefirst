@@ -18,6 +18,7 @@ type BiggerPictureProps = {
   onBehind: () => void;
   onVision: () => void;
   onPractice: () => void;
+  onCommunity: () => void;
 };
 
 const pathStages = [
@@ -58,6 +59,7 @@ function BiggerPicture({
   onBehind,
   onPractice,
   onVision,
+  onCommunity,
 }: BiggerPictureProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -193,6 +195,7 @@ function BiggerPicture({
         onBehind={onBehind}
         onVision={onVision}
         onPractice={onPractice}
+        onCommunity={onCommunity}
       />
     </section>
   );

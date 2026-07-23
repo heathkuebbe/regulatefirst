@@ -11,6 +11,7 @@ import Understand from "./components/Understand";
 import BehindRegulateFirst from "./components/BehindRegulateFirst";
 import Practice from "./components/Practice";
 import BiggerPicture from "./components/BiggerPicture";
+import ContinueRoom from "./components/ContinueRoom";
 import "./App.css";
 
 type Room =
@@ -25,7 +26,8 @@ type Room =
   | "understand"
   | "behind-regulate-first"
   | "practice"
-  | "bigger-picture";
+  | "bigger-picture"
+  | "continue";
 
 const roomPaths: Partial<Record<Room, string>> = {
   threshold: "/",
@@ -34,6 +36,7 @@ const roomPaths: Partial<Record<Room, string>> = {
   "behind-regulate-first": "/behind-regulate-first",
   practice: "/practice",
   "bigger-picture": "/bigger-picture",
+  continue: "/continue",
 };
 
 const roomSeo: Partial<
@@ -88,6 +91,13 @@ const roomSeo: Partial<
       "Explore the larger Regulate First journey through regulation, strengthening, connection, and awakening.",
     path: "/bigger-picture",
   },
+
+  continue: {
+    title: "Continue the Journey | Regulate First",
+    description:
+      "Continue the Regulate First journey through community, reflection, videos, and future book releases.",
+    path: "/continue",
+  },
 };
 
 function getInitialRoom(): Room {
@@ -108,6 +118,9 @@ function getInitialRoom(): Room {
 
     case "/bigger-picture":
       return "bigger-picture";
+
+    case "/continue":
+      return "continue";
 
     default:
       return "threshold";
@@ -228,6 +241,7 @@ function App() {
           onBehind={() => navigateToRoom("behind-regulate-first")}
           onVision={() => navigateToRoom("bigger-picture")}
           onPractice={() => navigateToRoom("practice")}
+          onCommunity={() => navigateToRoom("continue")}
         />
       )}
 
@@ -239,6 +253,7 @@ function App() {
           onBehind={() => navigateToRoom("behind-regulate-first")}
           onVision={() => navigateToRoom("bigger-picture")}
           onPractice={() => navigateToRoom("practice")}
+          onCommunity={() => navigateToRoom("continue")}
         />
       )}
 
@@ -250,6 +265,7 @@ function App() {
           onBehind={() => navigateToRoom("behind-regulate-first")}
           onVision={() => navigateToRoom("bigger-picture")}
           onPractice={() => navigateToRoom("practice")}
+          onCommunity={() => navigateToRoom("continue")}
         />
       )}
 
@@ -262,6 +278,7 @@ function App() {
           onBehind={() => navigateToRoom("behind-regulate-first")}
           onVision={() => navigateToRoom("bigger-picture")}
           onPractice={() => navigateToRoom("practice")}
+          onCommunity={() => navigateToRoom("continue")}
           onBaselineSeries={() => navigateToRoom("practice")}
           onQuickReturns={() => navigateToRoom("practice")}
           onQuickResets={() => navigateToRoom("practice")}
@@ -278,6 +295,20 @@ function App() {
           onBehind={() => navigateToRoom("behind-regulate-first")}
           onVision={() => navigateToRoom("bigger-picture")}
           onPractice={() => navigateToRoom("practice")}
+          onCommunity={() => navigateToRoom("continue")}
+        />
+      )}
+
+      {room === "continue" && (
+        <ContinueRoom
+          onBack={() => navigateToRoom("invitation")}
+          onBegin={() => navigateToRoom("threshold")}
+          onInvitation={() => navigateToRoom("invitation")}
+          onUnderstand={() => navigateToRoom("understand")}
+          onBehind={() => navigateToRoom("behind-regulate-first")}
+          onVision={() => navigateToRoom("bigger-picture")}
+          onPractice={() => navigateToRoom("practice")}
+          onCommunity={() => navigateToRoom("continue")}
         />
       )}
     </>

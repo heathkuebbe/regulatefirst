@@ -13,6 +13,7 @@ type InvitationProps = {
   onBehind: () => void;
   onVision: () => void;
   onPractice: () => void;
+  onCommunity: () => void;
 };
 
 function Invitation({
@@ -22,6 +23,7 @@ function Invitation({
   onBehind,
   onVision,
   onPractice,
+  onCommunity,
 }: InvitationProps) {
 
 const [menuOpen, setMenuOpen] = useState(false);
@@ -108,6 +110,7 @@ const [menuOpen, setMenuOpen] = useState(false);
         onBehind={onBehind}
         onVision={onVision}
         onPractice={onPractice}
+        onCommunity={onCommunity}
         
         />
 

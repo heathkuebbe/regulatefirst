@@ -17,6 +17,7 @@ type PracticeProps = {
   onBehind: () => void;
   onVision: () => void;
   onPractice: () => void;
+  onCommunity: () => void;
   onBaselineSeries: () => void;
   onQuickReturns: () => void;
   onQuickResets: () => void;
@@ -95,6 +96,7 @@ function Practice({
   onBehind,
   onVision,
   onPractice,
+  onCommunity,
 }: PracticeProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -278,6 +280,7 @@ function Practice({
         onBehind={onBehind}
         onVision={onVision}
         onPractice={onPractice}
+        onCommunity={onCommunity}
       />
     </section>
   );

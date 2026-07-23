@@ -7,6 +7,7 @@ type MenuDrawerProps = {
   onBehind: () => void;
   onPractice: () => void;
   onVision: () => void;
+  onCommunity: () => void;
 };
 
 function MenuDrawer({
@@ -18,6 +19,7 @@ function MenuDrawer({
   onBehind,
   onPractice,
   onVision,
+  onCommunity,
 }: MenuDrawerProps) {
   if (!isOpen) return null;
 
@@ -63,6 +65,10 @@ function MenuDrawer({
 
           <button type="button" onClick={() => handleNavigate(onPractice)}>
             Practice
+          </button>
+          
+          <button type="button" onClick={() => handleNavigate(onCommunity)}>
+            Community
           </button>
 
           <a

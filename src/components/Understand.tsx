@@ -19,6 +19,7 @@ type UnderstandProps = {
   onBehind: () => void;
   onVision: () => void;
   onPractice: () => void;
+  onCommunity: () => void;
 };
 
 function Understand({
@@ -28,6 +29,8 @@ function Understand({
   onBehind,
   onVision,
   onPractice,
+  onCommunity,
+  
 }: UnderstandProps) {
 
 const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -364,6 +367,7 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
             onBehind={onBehind}
             onVision={onVision}
             onPractice={onPractice}
+            onCommunity={onCommunity}
             />
 
      <section className="understand-vision">

@@ -9,6 +9,7 @@ type BehindRegulateFirstProps = {
   onBehind: () => void;
   onVision: () => void;
   onPractice: () => void;
+  onCommunity: () => void;
 };
 
 function BehindRegulateFirst({
@@ -18,6 +19,7 @@ function BehindRegulateFirst({
   onBehind,
   onVision,
   onPractice,
+  onCommunity,
 }: BehindRegulateFirstProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -489,6 +491,7 @@ function BehindRegulateFirst({
         onBehind={onBehind}
         onVision={onVision}
         onPractice={onPractice}
+        onCommunity={onCommunity}
       />
     </article>
   );
